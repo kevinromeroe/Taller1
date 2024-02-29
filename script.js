@@ -1,5 +1,5 @@
 document.getElementById('generateUsers').addEventListener('click', () => {
-    fetch('http://localhost:5000/generate-users/100000')  // Ajusta la cantidad de usuarios si es necesario
+    fetch('http://localhost:5000/generate-users/500000')  // Ajusta la cantidad de usuarios si es necesario
         .then(response => response.json())
         .then(data => {
             // Conteo de dominios
@@ -19,8 +19,14 @@ document.getElementById('generateUsers').addEventListener('click', () => {
                 type: 'bar',
                 name: 'Dominios'
             }];
-
-            Plotly.newPlot('plotDomain', domainDataPlot);
+            
+            const layout = {
+                title: 'Cantidad de Usuarios según el dominio usado',
+                xaxis: {title: 'Dominios'},
+                yaxis: {title: 'Cantidad de Usuarios'}
+            };
+            
+            Plotly.newPlot('plotDomain', domainDataPlot, layout);
 
             // Conteo de usuarios con contraseñas de más de 8 caracteres
             let longPasswordCount = 0;
@@ -37,7 +43,14 @@ document.getElementById('generateUsers').addEventListener('click', () => {
                 name: 'Longitud de Contraseñas'
             }];
 
-            Plotly.newPlot('plotUser', passwordDataPlot);
+            const layoutPassword = {
+                title: 'Cantidad de Usuarios según la seguridad de su contraseña',
+                xaxis: {title: 'Categorías'},
+                yaxis: {title: 'Cantidad de Usuarios'}
+            };
+
+            Plotly.newPlot('plotUser', passwordDataPlot, layoutPassword);
+
         })
         .catch(error => {
             console.error('Error:', error);

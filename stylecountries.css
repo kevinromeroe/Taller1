@@ -1,0 +1,22 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #4a4e69;
+}
+
+#populationPlot {
+    width: 100%;
+    max-width: 95%;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+div {
+    padding: 15px;
+}
