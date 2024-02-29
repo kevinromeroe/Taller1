@@ -1,0 +1,16 @@
+.description {
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+    margin: 20px 0;
+    padding: 0 20px;
+    line-height: 1.5;
+}
+
+.centered {
+    text-align: center;
+}
+
+#generateUsers {
+    margin-top: 20px; /* Optional: Add some space above the button */
+}
